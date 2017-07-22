@@ -11,4 +11,4 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="login-wrapper col-lg-4">
+<div class="login-wrapper col-lg-12">
