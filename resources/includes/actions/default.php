@@ -6,6 +6,7 @@ $all_users = $crud->GetAll();
     <tr>
         <th>RFID Tag</th>
         <th>IRC Name</th>
+        <th>Spoken Name</th>
         <th>Admin</th>
         <th>Active</th>
         <th>Edit</th>
@@ -19,6 +20,7 @@ $all_users = $crud->GetAll();
         <tr>
             <td><?php echo $user['key']; ?></td>
             <td><?php echo $user['ircName']; ?></td>
+            <td><?php echo $user['spokenName']; ?></td>
             <td><?php echo $user['isAdmin']; ?></td>
             <td><?php echo $user['isActive']; ?></td>
             <td><a href="admin.php?action=edit&key=<?php echo $user['key']; ?>">Edit</a></td>
