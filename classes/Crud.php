@@ -9,7 +9,7 @@
 
 class Crud extends Config {
 
-    public function Crud(){
+    public function __construct(){
         $this->ext_conn = self::getDBConnection();
     }
     public function CleanKey($key){
