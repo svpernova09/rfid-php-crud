@@ -6,6 +6,7 @@
  * Time: 12:36 PM
  * 
  */
+namespace App;
 
 class LogReader extends Config {
     private static function init() {

@@ -7,10 +7,13 @@
  * 
  */
 // Sanitize the datas
-include(dirname(__FILE__) . '/../config/config.php');
+include __DIR__ . '/../config/config.php';
+use PDO;
+use PDOException;
+
 $key = filter_var($_POST['pin'], FILTER_SANITIZE_STRING);
 $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-require_once(dirname(__FILE__) . '/../lib/autoloader.php');
+
 $crypto = new Crypto();
 try{
     //open the database

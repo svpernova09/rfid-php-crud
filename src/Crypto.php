@@ -6,6 +6,7 @@
  * Time: 3:29 PM
  *
  */
+namespace App;
 
 class Crypto {
     public function SecureThis($pin){

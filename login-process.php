@@ -8,7 +8,13 @@
  */
 session_unset();
 session_start();
-include(dirname(__FILE__) . '/config/config.php');
+include __DIR__ . '/vendor/autoload.php';
+include __DIR__ . '/config/config.php';
+use App\Crud;
+use App\Crypto;
+
+
+
 if(isset($_POST['pin'])){
     $bad_key = filter_var($_POST['pin'], FILTER_SANITIZE_STRING);
     $crud = new Crud();
@@ -24,7 +30,7 @@ if(isset($_GET['rowid'])){
     $rowid = filter_var($_GET['rowid'], FILTER_SANITIZE_STRING);
 }
 $crypto = new Crypto();
-
+//var_dump('sqlite:' . $database_path . $database_name); exit();
 try{
     //open the database
     $db = new PDO('sqlite:' . $database_path . $database_name);

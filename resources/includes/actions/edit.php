@@ -9,7 +9,7 @@ if(count($this_user) == "1"){
     require_once('admin-menu.php');
     ?>
     <h2>Editing <?php echo $this_user['0']['ircName']; ?></h2>
-    <form id="edit_form" name="edit_form" method="POST" action="admin.php?action=doedit&rowid=<?php echo $this_user['0']['rowid']; ?>">
+    <form id="edit_form" name="edit_form" method="POST" action="admin.php?action=doedit&key=<?php echo $this_user['0']['key']; ?>">
         <div class="form-group">
             <label for="key">Key: </label>
             <?php echo $this_user['0']['key']; ?>

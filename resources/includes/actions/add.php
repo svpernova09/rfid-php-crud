@@ -1,10 +1,10 @@
 <?php
+require __DIR__ . '/../../../vendor/autoload.php';
+use App\Sanitizer;
 
-if(isset($_POST)){
-    foreach($_POST AS $key => $value){
-        $_POST[$key] = filter_var($value, FILTER_SANITIZE_STRING);
-    }
-}
+$sanitizer = new Sanitizer();
+$_POST = $sanitizer($_POST);
+
 require_once('admin-menu.php');
 ?>
     <h2>New User</h2>

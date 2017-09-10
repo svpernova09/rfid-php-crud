@@ -1,2 +1,6 @@
 config/config.php
 *.sqlite
+main.c
+a.out
+*.csv
+vendor/

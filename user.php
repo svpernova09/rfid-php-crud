@@ -6,8 +6,12 @@
  * Time: 4:50 PM
  * 
  */
+
+use App\Crud;
+
 session_start();
-include(dirname(__FILE__) . '/config/config.php');
+include __DIR__ . '/vendor/autoload.php';
+include __DIR__ . '/config/config.php';
 $crud = new Crud();
 $this_user = $crud->GetThisUser($_SESSION['key']);
 if($debug){ var_dump($this_user); }
@@ -21,7 +25,7 @@ if(isset($_GET['msg']) && $_GET['msg'] == 'Update Successful'){
         <?php echo $msg; ?>
     </div>
 <?php } ?>
-<form id="edit_form" name="edit_form" method="POST" action="admin.php?action=doedituser&rowid=<?php echo $this_user['0']['rowid']; ?>">
+<form id="edit_form" name="edit_form" method="POST" action="admin.php?action=doedituser&key=<?php echo $this_user['0']['key']; ?>">
     <label for="key">Key: </label>
     <?php echo $this_user['0']['key']; ?><br />
     <label for="key">PIN: *leave blank to keep current PIN</label>
